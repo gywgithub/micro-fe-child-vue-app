@@ -1,4 +1,4 @@
-const { name } = require('./package.json');
+const { name } = require('./package');
 module.exports = {
   devServer: {
     headers: {
@@ -9,12 +9,8 @@ module.exports = {
     output: {
       library: `${name}-[name]`,
       libraryTarget: 'umd', // 把微应用打包成 umd 库格式
+      // libraryTarget: 'window', // 把微应用打包成 umd 库格式
       jsonpFunction: `webpackJsonp_${name}`,
     },
   },
 };
-
-// const { defineConfig } = require('@vue/cli-service')
-// module.exports = defineConfig({
-//   transpileDependencies: true
-// })

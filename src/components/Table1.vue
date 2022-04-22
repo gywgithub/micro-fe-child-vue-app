@@ -39,7 +39,7 @@ export default ({
   methods: {
     goHome () {
       this.$router.push({
-        path: '/child-vue'
+        path: '/'
       })
     }
   }

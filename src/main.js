@@ -35,7 +35,14 @@ export async function bootstrap() {
   console.log('[vue] vue app bootstraped');
 }
 export async function mount(props) {
+  console.log('--------------')
   console.log('[vue] props from main framework', props);
+  // 使用 Vue 原型属性
+  Vue.prototype.parentStore = props
+  props.onGlobalStateChange((state) => {
+    console.log('子应用接收的主应用数据')
+    console.log(state)
+  }, true);
   render(props);
 }
 export async function unmount() {
